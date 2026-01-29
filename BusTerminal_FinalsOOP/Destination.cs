@@ -8,7 +8,7 @@ namespace BusTerminal_FinalsOOP
 {
     public class Destination
     {
-        public int DestinationId { get; set; }
+        public int LocationId { get; set; } // PK
         public string Name { get; set; }
     }
 }

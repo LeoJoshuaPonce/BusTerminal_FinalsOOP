@@ -11,7 +11,8 @@ namespace BusTerminal_FinalsOOP
         public int ReceiptId { get; set; }
         public int TicketId { get; set; }
         public DateTime TimeCreated { get; set; }
-        public decimal Amount { get; set; }
+        public decimal OriginalAmount { get; set; }
+        public decimal DiscountApplied { get; set; }
         public string PaymentMethod { get; set; } // Cash, Card, etc.
     }
 }

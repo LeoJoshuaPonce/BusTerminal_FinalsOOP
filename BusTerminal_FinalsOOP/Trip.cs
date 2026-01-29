@@ -8,23 +8,20 @@ namespace BusTerminal_FinalsOOP
 {
     public class Trip
     {
-        public int TripId { get; set; }
+        public int TripId { get; set; } // PK
         public DateTime DepartureTime { get; set; }
-        public DateTime EstimatedArrivalTime { get; set; }
+        public decimal BasePrice { get; set; }
 
-        // Relationships
+        // Foreign Keys
         public int RouteId { get; set; }
         public Route Route { get; set; }
 
-        public int BusId { get; set; }
+        public int AssignedBusId { get; set; }
         public Bus AssignedBus { get; set; }
 
-        public int DriverId { get; set; }
+        public int AssignedDriverId { get; set; }
         public Driver AssignedDriver { get; set; }
 
-        // Manages the seating for this specific trip
         public List<Seat> Seats { get; set; } = new List<Seat>();
-
-        public decimal BasePrice { get; set; }
     }
 }

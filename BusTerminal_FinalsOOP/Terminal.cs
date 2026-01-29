@@ -8,52 +8,26 @@ namespace BusTerminal_FinalsOOP
 {
     public class Terminal
     {
-        private List<Trip> _allTrips;
-        private List<Bus> _allBuses;
+        private List<Trip> _trips;
+        private List<Bus> _buses;
 
-        public bool IsBusAvailable(int busId, DateTime newDeparture, DateTime newArrival)
+        public Terminal(List<Trip> trips, List<Bus> buses)
         {
-            var busTrips = _allTrips.Where(t => t.BusId == busId);
-
-            foreach (var trip in busTrips)
-            {
-                if (newDeparture < trip.EstimatedArrivalTime && newArrival > trip.DepartureTime)
-                {
-                    Console.WriteLine("Conflict: Bus is already scheduled for another trip at this time.");
-                    return false;
-                }
-            }
-
-            var bus = _allBuses.FirstOrDefault(b => b.BusId == busId);
-            if (bus != null && !bus.IsOperational)
-            {
-                Console.WriteLine("Conflict: Bus is currently unavailable/under maintenance.");
-                return false;
-            }
-
-            return true;
+            _trips = trips;
+            _buses = buses;
         }
 
-        public bool IsSitAvailable(int tripId, string seatNumber)
+        public bool ValidateSeatSale(int tripId, string seatNumber)
         {
-            var trip = _allTrips.FirstOrDefault(t => t.TripId == tripId);
+            var trip = _trips.FirstOrDefault(t => t.TripId == tripId);
             if (trip == null) return false;
+            var seat = trip.Seats.FirstOrDefault(s => s.SeatNumber.Equals(seatNumber, StringComparison.OrdinalIgnoreCase));
 
-            var seat = trip.Seats.FirstOrDefault(s => s.SeatNumber == seatNumber);
-
-            if (seat == null)
-            {
-                Console.WriteLine("Error: Seat does not exist on this bus layout.");
-                return false;
-            }
-
-            if (seat.IsOccupied)
-            {
-                Console.WriteLine("Conflict: Seat is already sold.");
-                return false;
-            }
+            if (seat == null) { Console.WriteLine("Error: Seat invalid."); return false; }
+            if (seat.IsOccupied) { Console.WriteLine("Error: Seat taken."); return false; }
 
             return true;
         }
     }
+
 }
