@@ -46,6 +46,7 @@
     <Compile Include="Bus.cs" />
     <Compile Include="Destination.cs" />
     <Compile Include="Driver.cs" />
+    <Compile Include="FileManager.cs" />
     <Compile Include="Receipt.cs" />
     <Compile Include="RouteStop.cs" />
     <Compile Include="Seat.cs" />

@@ -9,18 +9,8 @@ namespace BusTerminal_FinalsOOP
 {
     public class Route
     {
-        public int RouteId { get; set; } // PK
-        public string RouteName { get; set; }
-
-        // Foreign Keys for linking
-        public int OriginLocationId { get; set; }
-        public Destination Origin { get; set; }
-
-        public int DestinationLocationId { get; set; }
-        public Destination Destination { get; set; }
-
-        // Many-to-Many relationship often handled by a join table in DB, 
-        // but for now, a list is fine for the object model.
-        public List<Destination> IntermediateStops { get; set; } = new List<Destination>();
+        public int RouteId { get; set; }
+        public string Name { get; set; }
+        public List<string> Stops { get; set; } // List of stop names
     }
 }

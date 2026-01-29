@@ -11,7 +11,6 @@ namespace BusTerminal_FinalsOOP
         public int BusId { get; set; }
         public string PlateNumber { get; set; }
         public int Capacity { get; set; }
-        public string SeatingLayout { get; set; } // "2x2", "1x1x1"
-        public bool IsOperational { get; set; }
+        public string SeatingLayout { get; set; }
     }
 }

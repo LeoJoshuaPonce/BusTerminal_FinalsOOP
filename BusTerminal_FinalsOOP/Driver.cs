@@ -8,9 +8,7 @@ namespace BusTerminal_FinalsOOP
 {
     public class Driver
     {
-        public int DriverId { get; set; } // PK
+        public int DriverId { get; set; }
         public string FullName { get; set; }
-        public string LicenseNumber { get; set; }
-        public bool IsActive { get; set; }
     }
 }

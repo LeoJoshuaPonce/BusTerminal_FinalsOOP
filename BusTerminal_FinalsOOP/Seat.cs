@@ -8,11 +8,8 @@ namespace BusTerminal_FinalsOOP
 {
     public class Seat
     {
-        public int SeatId { get; set; } // PK (Unique ID for the database row)
-        public string SeatNumber { get; set; } // "A1", "B2"
+        public int SeatId { get; set; }
+        public string SeatNumber { get; set; }
         public bool IsOccupied { get; set; }
-
-        // Link back to Trip
-        public int TripId { get; set; }
     }
 }
