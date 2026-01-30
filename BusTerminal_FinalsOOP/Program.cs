@@ -28,15 +28,12 @@ namespace BusTerminal_FinalsOOP
             while (running)
             {
                 Console.Clear();
-                Console.WriteLine("=================================================");
-                Console.WriteLine("   BUS TERMINAL SYSTEM (CRUD + SOFT DELETE)");
-                Console.WriteLine("=================================================");
-                Console.WriteLine(" [1] DASHBOARD     : View Departures");
-                Console.WriteLine(" [2] POS           : Buy Ticket");
-                Console.WriteLine(" [3] DISPATCH      : Assign Drivers");
-                Console.WriteLine(" [4] MANAGE BUSES  : Create, Edit, Delete");
-                Console.WriteLine(" [5] EXIT");
-                Console.WriteLine("-------------------------------------------------");
+                Console.WriteLine("BUS TERMINAL SYSTEM");
+                Console.WriteLine(" 1 DASHBOARD     : View Departures");
+                Console.WriteLine(" 2 POS           : Buy Ticket");
+                Console.WriteLine(" 3 DISPATCH      : Assign Drivers");
+                Console.WriteLine(" 4 MANAGE BUSES  : Create, Edit, Delete");
+                Console.WriteLine(" 5 EXIT");
                 Console.Write("Select an option: ");
 
                 switch (Console.ReadLine())
@@ -49,10 +46,6 @@ namespace BusTerminal_FinalsOOP
                 }
             }
         }
-
-        // ==========================================
-        //  FEATURE 4: MANAGE BUSES (CRUD)
-        // ==========================================
         static void Tab_ManageBuses()
         {
             while (true)
@@ -71,10 +64,10 @@ namespace BusTerminal_FinalsOOP
 
                 switch (choice)
                 {
-                    case "1": // READ
+                    case "1":
                         Console.Clear();
                         Console.WriteLine("--- ACTIVE BUSES LIST ---");
-                        // HEADER ADDED HERE
+                        
                         Console.WriteLine("{0,-6} {1,-12} {2,-5} {3,-10}", "ID", "PLATE", "CAP", "LAYOUT");
                         Console.WriteLine(new string('-', 40));
 
@@ -86,7 +79,7 @@ namespace BusTerminal_FinalsOOP
                         Console.ReadKey();
                         break;
 
-                    case "2": // CREATE
+                    case "2": 
                         Console.Clear();
                         Console.WriteLine("\n--- Add New Bus ---");
                         int newId = allBuses.Any() ? allBuses.Max(b => b.BusId) + 1 : 100;
@@ -116,10 +109,10 @@ namespace BusTerminal_FinalsOOP
                         Console.ReadKey();
                         break;
 
-                    case "3": // UPDATE
+                    case "3": 
                         Console.Clear();
                         Console.WriteLine("--- EDIT BUS ---");
-                        // LIST BUSES FIRST
+                       
                         Console.WriteLine("{0,-6} {1,-12} {2,-5} {3,-10}", "ID", "PLATE", "CAP", "LAYOUT");
                         Console.WriteLine(new string('-', 40));
                         foreach (var b in allBuses.Where(b => !b.IsDeleted))
@@ -149,10 +142,10 @@ namespace BusTerminal_FinalsOOP
                         Console.ReadKey();
                         break;
 
-                    case "4": // SOFT DELETE
+                    case "4": 
                         Console.Clear();
                         Console.WriteLine("--- DELETE BUS ---");
-                        // LIST BUSES FIRST
+                      
                         Console.WriteLine("{0,-6} {1,-12} {2,-5} {3,-10}", "ID", "PLATE", "CAP", "LAYOUT");
                         Console.WriteLine(new string('-', 40));
                         foreach (var b in allBuses.Where(b => !b.IsDeleted))
@@ -177,9 +170,7 @@ namespace BusTerminal_FinalsOOP
             }
         }
 
-        // ==========================================
-        //  EXISTING FEATURES (UPDATED WITH HEADERS)
-        // ==========================================
+       
         static void Tab_Dashboard()
         {
             Console.Clear();
@@ -207,7 +198,7 @@ namespace BusTerminal_FinalsOOP
             Console.Clear();
             Console.WriteLine(">>> POS (POINT OF SALE) <<<");
 
-            // LIST TRIPS FIRST
+           
             Console.WriteLine("\n--- AVAILABLE TRIPS ---");
             Console.WriteLine("{0,-6} {1,-8} {2,-15} {3,-10}", "ID", "TIME", "ROUTE", "BUS");
             Console.WriteLine(new string('-', 45));
@@ -279,9 +270,6 @@ namespace BusTerminal_FinalsOOP
             Console.ReadKey();
         }
 
-        // ==========================================
-        //  DATABASE ENGINE
-        // ==========================================
         static void LoadDatabase()
         {
             if (fmRoutes.getStatus())
