@@ -12,5 +12,7 @@ namespace BusTerminal_FinalsOOP
         public string PlateNumber { get; set; }
         public int Capacity { get; set; }
         public string SeatingLayout { get; set; }
+        public bool IsOperational { get; set; }
+        public bool IsDeleted { get; set; } // <--- New Property for Soft Delete
     }
 }
