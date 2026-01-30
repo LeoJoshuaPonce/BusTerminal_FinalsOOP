@@ -10,13 +10,13 @@ namespace BusTerminal_FinalsOOP
     {
         public int TripId { get; set; }
         public int RouteId { get; set; }
-        public Route Route { get; set; } // Link
+        public Route Route { get; set; } 
 
         public int AssignedBusId { get; set; }
-        public Bus AssignedBus { get; set; } // Link
+        public Bus AssignedBus { get; set; } 
 
         public int AssignedDriverId { get; set; }
-        public Driver AssignedDriver { get; set; } // Link
+        public Driver AssignedDriver { get; set; } 
 
         public DateTime DepartureTime { get; set; }
         public decimal BasePrice { get; set; }

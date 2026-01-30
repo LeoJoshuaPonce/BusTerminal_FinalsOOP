@@ -13,6 +13,6 @@ namespace BusTerminal_FinalsOOP
         public DateTime TimeCreated { get; set; }
         public decimal OriginalAmount { get; set; }
         public decimal DiscountApplied { get; set; }
-        public string PaymentMethod { get; set; } // Cash, Card, etc.
+        public string PaymentMethod { get; set; } 
     }
 }

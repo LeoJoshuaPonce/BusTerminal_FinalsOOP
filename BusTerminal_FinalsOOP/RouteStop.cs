@@ -11,7 +11,7 @@ namespace BusTerminal_FinalsOOP
     {
         public int DestinationId { get; set; }
         public Destination Destination { get; set; }
-        public int SequenceOrder { get; set; } // 1st stop, 2nd stop, etc.
+        public int SequenceOrder { get; set; } 
         public TimeSpan ETAFromOrigin { get; set; }
     }
 }

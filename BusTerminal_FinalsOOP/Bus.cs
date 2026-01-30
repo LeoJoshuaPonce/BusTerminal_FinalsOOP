@@ -13,6 +13,6 @@ namespace BusTerminal_FinalsOOP
         public int Capacity { get; set; }
         public string SeatingLayout { get; set; }
         public bool IsOperational { get; set; }
-        public bool IsDeleted { get; set; } // <--- New Property for Soft Delete
+        public bool IsDeleted { get; set; } 
     }
 }

@@ -11,7 +11,6 @@ namespace BusTerminal_FinalsOOP
     {
         public int RouteId { get; set; }
         public string Name { get; set; }
-        // Changed from List<string> to List<RouteStop>
         public List<RouteStop> RouteStops { get; set; } = new List<RouteStop>();
     }
 }
